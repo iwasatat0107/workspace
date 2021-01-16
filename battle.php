@@ -6,6 +6,27 @@
 **/
 
 // ここから処理を記述
+$hands = ['グー','チョキ','パー'];
+
+if (isset($_POST['playerHand'])) {
+
+  $playerHand = $_POST['playerHand'];
+
+  $key = array_rand($hands);
+  $pcHand = $hands[$key];
+
+  if ($playerHand == $pcHand) {
+      $result = 'あいこ';
+  } elseif ($playerHand == 'グー' && $pcHands == 'チョキ') {
+      $result = '勝ち';
+  } elseif ($playerHands == 'チョキ' && $pcHands == 'パー') {
+      $result = '勝ち';
+  } elseif ($playerHands == 'パー' && $pcHands == 'グー') {
+      $result = '勝ち';
+  } else {
+    $result = '負け';
+  }
+}
 
 ?>
 
